@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myreplicaset
+  labels:
+    app: myapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "2048"
+  template:
+  # POD
+    metadata:
+      labels:
+        app: "2048"
+    spec:
+      containers:
+        - name: jeu-2048
+          image: bgulla/2048:latest
+          ports:
+            - containerPort: 80
