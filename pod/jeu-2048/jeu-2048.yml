@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jeu-2048
+spec:
+  containers:
+  - name: jeu-2048
+    image: bgulla/2048:latest
+    ports:
+      - containerPort: 80
